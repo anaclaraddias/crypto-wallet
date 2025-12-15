@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-func TestMainIntegration_Case1(t *testing.T) {
+func TestMainIntegration_DepositBTC(t *testing.T) {
 	inputJSON := `{"type": "DEPOSIT", "asset": "BTC", "amount": 1.5}`
 	input := inputJSON + "\n"
 

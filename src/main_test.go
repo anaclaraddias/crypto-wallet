@@ -11,7 +11,7 @@ func verifyResultExpectation(t *testing.T, expected, actual map[asset]float64) {
 	}
 }
 
-func TestExampleRun_Case1(t *testing.T) {
+func TestExampleRun_DepositBTC(t *testing.T) {
 	currentWallet := map[asset]float64{}
 
 	expectedWallet := map[asset]float64{
@@ -24,7 +24,7 @@ func TestExampleRun_Case1(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_Case2(t *testing.T) {
+func TestExampleRun_DepositUSD(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 1.5,
 	}
@@ -40,7 +40,7 @@ func TestExampleRun_Case2(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_Case3(t *testing.T) {
+func TestExampleRun_WithdrawUSD(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 1.5,
 		"USD": 1000,
@@ -57,7 +57,7 @@ func TestExampleRun_Case3(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_Case4(t *testing.T) {
+func TestExampleRun_InvalidWithdrawBTC(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 1.5,
 		"USD": 700,
@@ -74,7 +74,7 @@ func TestExampleRun_Case4(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_Case5(t *testing.T) {
+func TestExampleRun_DepositETH(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 1.5,
 		"USD": 700,
@@ -92,7 +92,7 @@ func TestExampleRun_Case5(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_Case6(t *testing.T) {
+func TestExampleRun_WithdrawBTC(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 1.5,
 		"USD": 700,
@@ -111,7 +111,7 @@ func TestExampleRun_Case6(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_InvalidType(t *testing.T) {
+func TestInvalidType(t *testing.T) {
 	currentWallet := map[asset]float64{}
 	expectedWallet := map[asset]float64{}
 
@@ -121,7 +121,7 @@ func TestExampleRun_InvalidType(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_InvalidAsset(t *testing.T) {
+func TestInvalidAsset(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 0.5,
 	}
@@ -136,7 +136,7 @@ func TestExampleRun_InvalidAsset(t *testing.T) {
 	verifyResultExpectation(t, expectedWallet, walletResult)
 }
 
-func TestExampleRun_InvalidAmount(t *testing.T) {
+func TestInvalidAmount(t *testing.T) {
 	currentWallet := map[asset]float64{
 		"BTC": 0.5,
 	}
